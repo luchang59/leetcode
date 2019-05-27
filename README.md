@@ -1,2 +1,2 @@
 # leetcode
-this project is for my leetcode excerise
+this project is for my leetcode exercises
