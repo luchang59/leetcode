@@ -11,19 +11,23 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-
+        # the core of this question is to maintain the maxValue, the helper function is made for it as well.
         self.maxValue = float('-inf')
         self.helper(root)
         return self.maxValue
 
     def helper(self, root):
+        """
+        This helper function is designed to consider the sum include both side or just one side.
+        """
         if not root: return 0
-
+        
+        # get the left path and right path value, if the value less than 0, don't add it into the path
         left = max(self.helper(root.left), 0)
         right = max(self.helper(root.right), 0)
-
-        pathLeftRight = root.val + left + right
-
+        # sum the root node, left value and right value, make a new path value
+        pathLeftRight = sum(root.val, left, right)
+        # compare and update the current maxValue and the new path value
         self.maxValue = max(self.maxValue, pathLeftRight)
-        
+        # this return is for the recursion (for left value and right value)
         return root.val + max(left, right)
