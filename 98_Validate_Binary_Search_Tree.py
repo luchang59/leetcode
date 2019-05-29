@@ -25,3 +25,23 @@ class Solution(object):
         # the node.val must be smaller than all right node and larger than lower bound
         right = self.helper(node.right, node.val, upper_bound)
         return left and right
+
+    # another solution based on while-loop
+        # if not root: return True
+        
+        # res = []
+        # stack = []
+        # cur = root
+
+        # while stack or cur:
+        #     while cur:
+        #         stack.append(cur)
+        #         cur = cur.left
+        #     cur = stack.pop()
+        #     res.append(cur.val)
+        #     cur = cur.right
+        
+        # for i in range(1, len(res)):
+        #     if res[i] <= res[i-1]:
+        #         return False
+        # return True
