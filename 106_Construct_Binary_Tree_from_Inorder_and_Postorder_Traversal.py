@@ -21,3 +21,20 @@ class Solution:
         
         return root
         
+
+        # another solution
+
+        # def helper(left, right):
+        #     if left > right: return None
+
+        #     root = TreeNode(postorder.pop())
+
+        #     index = idx_map[val]
+
+        #     root.right = helper(index + 1, right)
+        #     root.left = helper(left, index - 1)
+
+        #     return root
+
+        # idx_map = {val:idx for idx, val in enumerate(inorder)}
+        # return helper(0, len(inorder) - 1)

@@ -1,7 +1,6 @@
 class Solution:
     def letterCombinations(self, digits: str):
 
-        
         if not digits: return []
         
         letter = {
@@ -16,6 +15,7 @@ class Solution:
         }
         
         res = []
+        
         def backtrack(digit, path):
             if len(digit) == 0:
                 res.append(path)
