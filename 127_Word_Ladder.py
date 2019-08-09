@@ -11,18 +11,18 @@ class Solutions:
                 newWord = word[:i] + '*' + word[i+1:]
                 allWords[newWord].append(word)
         
-        queue = collections.deque([(beginWord, 0)])
+        queue = collections.deque([(beginWord, 1)])
         seen = set([beginWord])
 
         while queue:
-            word, length = queue.popleft()
-            if word == endWord: return length
+            word, step = queue.popleft()
+            if word == endWord: return step
             
             for i in range(len(word)):
                 newWord = word[:i] + '*' + word[i+1:]
                 for curWord in allWords[newWord]:
                     if curWord not in seen:
                         seen.add(curWord)
-                        queue.append((curWord, length + 1))
+                        queue.append((curWord, step + 1))
         
         return 0

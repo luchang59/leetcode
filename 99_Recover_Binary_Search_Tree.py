@@ -29,7 +29,7 @@ class Solution:
         first, second = swapNodes[0], swapNodes[-1]
         first.val, second.val = second.val, first.val
 
-# Morris Traversal
+        # Morris Traversal
         first, second = None, None
         firstTime = True
         prev = TreeNode(float('-inf'))
